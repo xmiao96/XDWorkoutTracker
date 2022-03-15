@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1348728246318608" />
+        <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout-w936dp/activity_login.xml" value="0.157421875" />
+        <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_main.xml" value="0.3695652173913043" />
+        <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_dashboard.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_home.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_notifications.xml" value="0.20989583333333334" />
