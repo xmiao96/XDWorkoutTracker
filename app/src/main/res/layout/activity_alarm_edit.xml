@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmEditActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/alarmSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAlignment="textEnd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/hourSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hour" />
+
+        <Button
+            android:id="@+id/minuteSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Minutes" />
+
+        <Button
+            android:id="@+id/daySetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="AM/PM" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/repeatBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select repeat pattern" />
+
+    <Button
+        android:id="@+id/soundBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select sound" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/design_default_color_error"
+        android:backgroundTint="#DD1212"
+        android:text="Cancel" />
+
+</LinearLayout>

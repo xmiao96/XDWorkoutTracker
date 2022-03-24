@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XDWorkoutTracker">
         <activity
+            android:name=".AlarmEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".progress"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
