@@ -1,4 +1,4 @@
-package com.example.xdworkouttracker.ui.dashboard;
+package com.example.xdworkouttracker.ui.alert;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.xdworkouttracker.databinding.FragmentDashboardBinding;
+import com.example.xdworkouttracker.databinding.FragmentAlertBinding;
 
-public class DashboardFragment extends Fragment {
+public class AlertFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentAlertBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        AlertViewModel dashboardViewModel =
+                new ViewModelProvider(this).get(AlertViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentAlertBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
+        final TextView textView = binding.textAlert;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
