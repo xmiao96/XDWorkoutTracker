@@ -11,23 +11,23 @@
         android:theme="@style/Theme.XDWorkoutTracker">
         <activity
             android:name=".AlarmEditActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AlarmActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".progress"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
+<!--        <activity-->
+<!--            android:name=".LoginActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_login" />-->
         <activity
             android:name=".MainActivity"
             android:exported="true"

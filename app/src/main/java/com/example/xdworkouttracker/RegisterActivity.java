@@ -2,6 +2,7 @@ package com.example.xdworkouttracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AppComponentFactory;
 import android.os.Bundle;
 
 public class RegisterActivity extends AppCompatActivity {

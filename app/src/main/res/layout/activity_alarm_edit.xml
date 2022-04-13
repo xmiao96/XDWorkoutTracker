@@ -4,15 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlarmEditActivity"
-    android:orientation="vertical">
-
-    <Button
-        android:id="@+id/alarmSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textAlignment="textEnd" />
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".AlarmEditActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,48 +15,103 @@
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/hourSetting"
+        <Spinner
+            android:id="@+id/hour_spinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="Hour" />
+            android:background="@color/material_dynamic_neutral_variant80"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/hour_list"
+            android:isScrollContainer="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
-        <Button
-            android:id="@+id/minuteSetting"
+        <Spinner
+            android:id="@+id/minute_spinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="Minutes" />
+            android:background="@color/material_dynamic_neutral80"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/min_list"
+            android:isScrollContainer="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
 
-        <Button
-            android:id="@+id/daySetting"
+        <Spinner
+            android:id="@+id/AmPm_spinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="AM/PM" />
+            android:background="@color/material_dynamic_primary70"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/amPm_list"
+            android:spinnerMode="dropdown" />
+            android:entries="@array/amPm_list"
+            android:isScrollContainer="true" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/repeatBtn"
+    <com.anurag.multiselectionspinner.MultiSpinner
+        android:id="@+id/spinnerMultiSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select repeat pattern" />
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:hint="Select routine"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/soundBtn"
+    <Spinner
+        android:id="@+id/sound_spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select sound" />
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:entries="@array/sound_list" />
 
-    <Button
-        android:id="@+id/cancelBtn"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/design_default_color_error"
-        android:backgroundTint="#DD1212"
-        android:text="Cancel" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/alram_delete_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/design_default_color_error"
+            android:backgroundTint="#DD1212"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/alarmSave"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="Save"
+            android:textAlignment="center" />
+    </LinearLayout>
 
 </LinearLayout>

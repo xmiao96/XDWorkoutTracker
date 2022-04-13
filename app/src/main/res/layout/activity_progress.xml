@@ -8,29 +8,26 @@
 
     <EditText
         android:id="@+id/progress_title"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="128dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Progress"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/timeInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="2dp"
         android:text="Save"
-        app:layout_constraintEnd_toEndOf="@+id/progress_title"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="@+id/progress_title"
-        app:layout_constraintTop_toTopOf="@+id/progress_title" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/carolies_title"
@@ -46,39 +43,45 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_title"
-        app:layout_constraintVertical_bias="0.048" />
+        app:layout_constraintVertical_bias="0.097" />
 
-    <Button
-        android:id="@+id/serach_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="512dp"
-        android:text="Search Your Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Spinner
+        android:id="@+id/spinner_activities"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:entries="@array/activity_list"
+        app:layout_constraintBottom_toTopOf="@+id/carolies_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_title"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/timeInput"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="329dp"
         android:background="@color/purple_200"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Duration"
+        android:text="Excersise Duration"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/numberInput"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serach_btn"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintTop_toBottomOf="@+id/progress_title" />
 
     <EditText
         android:id="@+id/numberInput"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
-        android:layout_marginBottom="408dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="328dp"
         android:background="@color/purple_200"
         android:ems="10"
         android:hint="0 minutes"
@@ -86,14 +89,14 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toEndOf="@+id/timeInput" />
 
     <EditText
         android:id="@+id/weightInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="332dp"
+        android:layout_marginBottom="276dp"
         android:ems="10"
         android:hint="Enter your current weight (lbs)"
         android:inputType="number"
@@ -101,30 +104,29 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button8"
-        android:layout_width="0dp"
+        android:id="@+id/calculate_btn"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="252dp"
+        android:layout_marginTop="27dp"
         android:text="Calculate"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
 
-    <FrameLayout
-        android:id="@+id/result_frag"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
+    <TextView
+        android:id="@+id/calculation_result"
+        android:layout_width="405dp"
+        android:layout_height="148dp"
         android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="34dp"
+        android:textColor="@color/black"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculate_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

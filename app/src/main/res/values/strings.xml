@@ -24,4 +24,69 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string-array name="hour_list">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="min_list">
+        <item>00</item>
+        <item>05</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>35</item>
+        <item>40</item>
+        <item>45</item>
+        <item>50</item>
+        <item>55</item>
+    </string-array>
+
+    <string-array name="amPm_list">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+
+<!--    <string-array name="repeatpattern_list">-->
+<!--        <item>Sunday</item>-->
+<!--        <item>Monday</item>-->
+<!--        <item>Tuesday</item>-->
+<!--        <item>Wednesday</item>-->
+<!--        <item>Thursday</item>-->
+<!--        <item>Friday</item>-->
+<!--        <item>Saturday</item>-->
+<!--    </string-array>-->
+
+    <string-array name="sound_list">
+        <item>Apex</item>
+        <item>Beacon</item>
+        <item>Chimes</item>
+        <item>Cosmic</item>
+        <item>Night Owl</item>
+        <item>Radiate</item>
+
+    </string-array>
+
+    <string-array name="activity_list">
+        <item>Walking,Running,Swimming</item>
+        <item>GYM</item>
+        <item>Sport,Training</item>
+        <item>Home Activity</item>
+
+    </string-array>
+
+
 </resources>
