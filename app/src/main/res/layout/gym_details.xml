@@ -32,6 +32,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/gym_name"
                     android:textAlignment="center"
+                    android:layout_marginLeft="5dp"
                     android:text="Gym's name: "
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -42,6 +43,7 @@
                     android:textAlignment="center"
                     android:text="Address: "
                     android:textSize="20dp"
+                    android:layout_marginLeft="5dp"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
                     />

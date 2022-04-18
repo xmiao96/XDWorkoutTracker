@@ -9,5 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="add_process_color">#BCB4B4</color>
     <color name="add_process_text_color">#FF6200EE</color>
-
+    <color name="transparentColor" >#00FFFFFF</color>
 </resources>
