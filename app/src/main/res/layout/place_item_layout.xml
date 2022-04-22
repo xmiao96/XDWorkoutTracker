@@ -46,11 +46,11 @@
                     android:id="@+id/txtPlacRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableTint="@color/teal_700"
                     android:text="@{googlePlaceModel.rating!=null?String.valueOf(googlePlaceModel.rating) : `New`, default=3.4}"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    app:drawableStartCompat="@drawable/ic_baseline_star_rate_24"
-                    android:drawableTint="@color/teal_700" />
+                    app:drawableStartCompat="@drawable/ic_baseline_star_rate_24" />
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

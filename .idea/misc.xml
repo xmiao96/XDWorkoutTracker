@@ -23,8 +23,12 @@
         <entry key="app/src/main/res/drawable/ic_traffic.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/ic_twotone_search_24.xml" value="0.1465" />
         <entry key="app/src/main/res/drawable/map_background.xml" value="0.1665" />
+        <entry key="app/src/main/res/layout/activity_alarm.xml" value="0.2838541666666667" />
+        <entry key="app/src/main/res/layout/activity_alarm_edit.xml" value="0.2838541666666667" />
         <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.257708740234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1691024780273438" />
+        <entry key="app/src/main/res/layout/activity_progress.xml" value="0.2838541666666667" />
+        <entry key="app/src/main/res/layout/alarm_card.xml" value="0.2838541666666667" />
         <entry key="app/src/main/res/layout/content_list_view.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/dialog.xml" value="0.16018518518518518" />
         <entry key="app/src/main/res/layout/dialog_layout.xml" value="0.1" />

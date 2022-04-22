@@ -1,19 +1,38 @@
 package com.example.xdworkouttracker.ui.process;
 
-import java.util.Date;
-
 public class Process {
-    private String processNo, activity,d;
 
 
-    public Process(
-            String processNo,
-            String activity,
-            String d
-    ) {
+    private String processNo;
+    private String duration;
+    private String activity;
+    private String result;
+    private String carolies;
+
+
+    public Process(String processNo, String duration, String activity, String result, String carolies) {
         this.processNo = processNo;
+        this.duration = duration;
         this.activity = activity;
-        this.d = d;
+        this.result = result;
+        this.carolies = carolies;
+    }
+
+    public Process (){}
+    public String getProcessNo() {
+        return processNo;
+    }
+
+    public void setProcessNo(String processNo) {
+        this.processNo = processNo;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public String getActivity() {
@@ -24,20 +43,19 @@ public class Process {
         this.activity = activity;
     }
 
-    public String getDate() {
-        return d;
+    public String getResult() {
+        return result;
     }
 
-    public void setDate(String date) {
-        this.d = date;
+    public void setResult(String result) {
+        this.result = result;
     }
 
-    public String getProcessNo() {
-        return processNo;
+    public String getCarolies() {
+        return carolies;
     }
 
-    public void setProcessNo(String processNo) {
-        this.processNo = processNo;
+    public void setCarolies(String carolies) {
+        this.carolies = carolies;
     }
-
 }

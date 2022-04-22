@@ -24,14 +24,12 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.MyViewHo
 //                          ItemClickListener clickListener
     ) {
         this.list = list;
-        this.clickListener = clickListener;
     }
 
     @NonNull
     @Override
     public ProcessAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_process, parent, false);
-
         return new MyViewHolder(view);
     }
 
@@ -39,7 +37,9 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.MyViewHo
     public void onBindViewHolder(@NonNull ProcessAdapter.MyViewHolder holder, int position) {
         holder.processNo.setText(list.get(position).getProcessNo());
         holder.activity.setText(list.get(position).getActivity());
-        holder.activitydate.setText(list.get(position).getDate());
+        holder.duration.setText(list.get(position).getDuration());
+        holder.cal_burned.setText(list.get(position).getCarolies());
+        holder.cal_result.setText(list.get(position).getResult());
         // click method for display detail of each Process
 //        holder.itemView.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -57,13 +57,17 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.MyViewHo
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView processNo;
+        TextView duration;
+        TextView cal_burned;
         TextView activity;
-        TextView activitydate;
+        TextView cal_result;
         public MyViewHolder(View view){
             super(view);
             processNo = (TextView) view.findViewById(R.id.processNo);
             activity = (TextView) view.findViewById(R.id.process_activity_result);
-            activitydate = (TextView) view.findViewById(R.id.process_activity_date_display);
+            duration = (TextView) view.findViewById(R.id.process_duration_result);
+            cal_burned = (TextView) view.findViewById(R.id.process_carolies_result);
+            cal_result = (TextView) view.findViewById(R.id.process_activity_result_display);
         }
     }
 
