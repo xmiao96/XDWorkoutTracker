@@ -1,29 +1,22 @@
 <resources>
     <string name="app_name">XDWorkoutTracker</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_register">Register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_alarm">AlarmActivity</string>
+    <string name="title_process">Process</string>
+    <string name="title_alert">Alert</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_search">Search</string>
+    <string name="title_activity_list_view">ListView</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="title_activity_alarm">AlarmActivity</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
+    <string name="API_KEY"></string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
     <string-array name="hour_list">
         <item>1</item>
@@ -60,16 +53,6 @@
         <item>PM</item>
     </string-array>
 
-<!--    <string-array name="repeatpattern_list">-->
-<!--        <item>Sunday</item>-->
-<!--        <item>Monday</item>-->
-<!--        <item>Tuesday</item>-->
-<!--        <item>Wednesday</item>-->
-<!--        <item>Thursday</item>-->
-<!--        <item>Friday</item>-->
-<!--        <item>Saturday</item>-->
-<!--    </string-array>-->
-
     <string-array name="sound_list">
         <item>Apex</item>
         <item>Beacon</item>
@@ -81,11 +64,12 @@
     </string-array>
 
     <string-array name="activity_list">
-        <item>Walking,Running,Swimming</item>
-        <item>GYM</item>
-        <item>Sport,Training</item>
+        <item>Walking</item>
+        <item>Running</item>
+        <item>Swimming</item>
+        <item>Training</item>
+        <item>Sport</item>
         <item>Home Activity</item>
-
     </string-array>
 
 

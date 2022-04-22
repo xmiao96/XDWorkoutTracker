@@ -204,7 +204,7 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
                 multiSpinner.setText("Everyday");
             }
             else
-            multiSpinner.setText(stringBuilder.toString());
+                multiSpinner.setText(stringBuilder.toString());
         }
 
 

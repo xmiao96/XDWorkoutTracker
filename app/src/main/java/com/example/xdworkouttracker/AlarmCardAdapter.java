@@ -83,7 +83,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         if(alarmInfo !=null)
-                        alarmInfo.remove(clickPosition);
+                            alarmInfo.remove(clickPosition);
                     }
                 })
                 .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
@@ -92,9 +92,9 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         //Todo: finish the function to naviagate another page to show more information
                         Intent intent = new Intent(context, AlarmEditActivity.class);
 
-                       // intent.putExtra("alram", alarmInfo.get(clickPosition));
+                        // intent.putExtra("alram", alarmInfo.get(clickPosition));
 
-                       // intent.putExtra("cakeId", clickPosition);
+                        // intent.putExtra("cakeId", clickPosition);
 
                         context.startActivity(intent);
 

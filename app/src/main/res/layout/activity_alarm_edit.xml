@@ -58,8 +58,8 @@
             android:dropDownSelector="@android:drawable/arrow_down_float"
             android:entries="@array/amPm_list"
             android:spinnerMode="dropdown" />
-            android:entries="@array/amPm_list"
-            android:isScrollContainer="true" />
+        android:entries="@array/amPm_list"
+        android:isScrollContainer="true" />
 
     </LinearLayout>
 

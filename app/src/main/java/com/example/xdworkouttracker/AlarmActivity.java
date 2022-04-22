@@ -58,7 +58,6 @@ public class AlarmActivity extends AppCompatActivity {
 //
 //        }
 
-
         setUpAlarm = findViewById(R.id.setUpBtn);
         intentSetUpAlarm = new Intent(context, AlarmEditActivity.class);
         setUpAlarm.setOnClickListener(new View.OnClickListener() {

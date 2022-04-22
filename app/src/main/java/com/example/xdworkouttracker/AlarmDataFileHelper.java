@@ -37,13 +37,13 @@ public class AlarmDataFileHelper {
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             ObjectInputStream ois = new ObjectInputStream(fis);
-           // alarmItem = (ArrayList<String>)ois.readObject();
-           // alarmList.add(alarmItem);
+            // alarmItem = (ArrayList<String>)ois.readObject();
+            // alarmList.add(alarmItem);
             alarmList = (ArrayList<ArrayList<String>>)ois.readObject();
 
         } catch (FileNotFoundException e) {
             alarmList = new ArrayList<>();
-           // alarmItem = new ArrayList<>();
+            // alarmItem = new ArrayList<>();
             e.printStackTrace();
         }catch (IOException e){
             e.printStackTrace();
