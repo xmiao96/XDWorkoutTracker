@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.xdworkouttracker.ui.alert.AlertFragment;
+
 import java.util.ArrayList;
 
 public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
@@ -20,7 +22,6 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     //[time, ampm, day]
     public ArrayList<ArrayList<String>> alarmInfo;
-
     public Context context;
 
     public AlarmCardAdapter(ArrayList<ArrayList<String>> alarmInfo, Context context) {
@@ -44,7 +45,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         ((alarmViewHolder)holder).alarmCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogMessage(position,context);
+                showDialogMessage(position, context);
             }
         });
 
@@ -71,7 +72,10 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             day = itemView.findViewById(R.id.display_day);
             alarmCard = itemView.findViewById(R.id.card_design_alram);
 
+        }
 
+        public CardView getView(){
+            return alarmCard;
         }
     }
 

@@ -22,26 +22,21 @@
             android:name=".AlarmEditActivity"
             android:exported="true" />
         <activity
-            android:name=".AlarmActivity"
-            android:exported="true" />
-        <activity
             android:name=".progress"
             android:exported="true" />
-        <activity
-            android:name=".AlarmEditActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AlarmActivity"
-            android:exported="true" />
-        <activity
-            android:name=".progress"
-            android:exported="true" />
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".WebServices.ActForAlertFragmentActivity"
+            android:exported="false" />
+
+
 <!--        <activity-->
 <!--            android:name=".LoginActivity"-->
 <!--            android:exported="false"-->

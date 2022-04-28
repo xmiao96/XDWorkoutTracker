@@ -1,9 +1,12 @@
 package com.example.xdworkouttracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.app.AlertDialog;
 import android.app.Application;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,10 +15,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
 
 import com.anurag.multiselectionspinner.MultiSelectionSpinnerDialog;
 import com.anurag.multiselectionspinner.MultiSpinner;
+import com.example.xdworkouttracker.WebServices.ActForAlertFragmentActivity;
+import com.example.xdworkouttracker.ui.alert.AlertFragment;
+import com.example.xdworkouttracker.ui.process.ProcessFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -118,8 +125,6 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
 
         //BUTTON SAVE
         save_button = findViewById(R.id.alarmSave);
-        intent = new Intent(context,AlarmActivity.class);
-
         save_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -137,28 +142,31 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
                 alarmInfo.add(timeCard);
                 AlarmDataFileHelper.writeData(alarmInfo,getApplicationContext());
                 //TODO: SHOULD BE LOOP into the file to add the list to alramInfo list
-                adapter = new AlarmCardAdapter(alarmInfo,context);
+                adapter = new AlarmCardAdapter(alarmInfo,getApplicationContext());
                 adapter.notifyDataSetChanged();
 
-
+                intent = new Intent(context, ActForAlertFragmentActivity.class);
                 context.startActivity(intent);
+
+
             }
         });
 
 
-        //BUTTON DELETE ALRAM
+        //BUTTON Back
         delete_button = findViewById(R.id.alram_delete_btn);
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AlarmEditActivity.this, AlarmActivity.class);
-                context.startActivity(i);
-            }
-        });
+
+                Intent i = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
+                (AlarmEditActivity.this).startActivity(i);
 
 
+            } });
 
     }
+
     @Override
     //This is where you get all your items selected from the Multi Selection Spinner
     public void OnMultiSpinnerItemSelected(List<String> chosenItems) {

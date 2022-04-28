@@ -3,17 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/drawable-anydpi/alert.xml" value="0.2385" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/drawable-anydpi/process.xml" value="0.2385" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_alarm.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_alarm_edit.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_for_alert_fragment.xml" value="0.25" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_login.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_progress.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/alarm_card.xml" value="0.33" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/content_alarm.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_alert.xml" value="0.25" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_first.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_result.xml" value="0.24365942028985507" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_second.xml" value="0.24365942028985507" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/place_item_layout.xml" value="0.25" />
         <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/result_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/Wiky_/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26875" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1348728246318608" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout-w936dp/activity_login.xml" value="0.157421875" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/activity_login.xml" value="0.264" />
@@ -23,43 +30,6 @@
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_home.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/layout/fragment_notifications.xml" value="0.20989583333333334" />
         <entry key="..\:/Users/Xin/AndroidStudioProjects/XDWorkoutTracker/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20989583333333334" />
-        <entry key="app/src/main/res/drawable-anydpi/profile.xml" value="0.1465" />
-        <entry key="app/src/main/res/drawable/ic_atm.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_car_wash.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_gas_station.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_gym.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_hospital.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_hotel.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_map_type.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_pharmacy.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_restaurant.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_saloon.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_shopping_cart.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_traffic.xml" value="0.1665" />
-        <entry key="app/src/main/res/drawable/ic_twotone_search_24.xml" value="0.1465" />
-        <entry key="app/src/main/res/drawable/map_background.xml" value="0.1665" />
-        <entry key="app/src/main/res/layout/activity_alarm.xml" value="0.2838541666666667" />
-        <entry key="app/src/main/res/layout/activity_alarm_edit.xml" value="0.2838541666666667" />
-        <entry key="app/src/main/res/layout/activity_list_view.xml" value="0.257708740234375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1691024780273438" />
-        <entry key="app/src/main/res/layout/activity_progress.xml" value="0.2838541666666667" />
-        <entry key="app/src/main/res/layout/alarm_card.xml" value="0.2838541666666667" />
-        <entry key="app/src/main/res/layout/content_list_view.xml" value="0.20833333333333334" />
-        <entry key="app/src/main/res/layout/dialog.xml" value="0.16018518518518518" />
-        <entry key="app/src/main/res/layout/dialog_layout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_alert.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.14222222222222222" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.20833333333333334" />
-        <entry key="app/src/main/res/layout/fragment_process.xml" value="0.15134429931640625" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.20833333333333334" />
-        <entry key="app/src/main/res/layout/gym_details.xml" value="0.20833333333333334" />
-        <entry key="app/src/main/res/layout/info_window_layout.xml" value="0.19537037037037036" />
-        <entry key="app/src/main/res/layout/list_process.xml" value="0.14590606689453123" />
-        <entry key="app/src/main/res/layout/place_item_layout.xml" value="0.2796875" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.20275573730468754" />
-        <entry key="app/src/main/res/menu/map_type_menu.xml" value="0.19537037037037036" />
       </map>
     </option>
   </component>
@@ -68,12 +38,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.21619149999680864" />
-      </ProjectState>
-    </option>
   </component>
 </project>

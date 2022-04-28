@@ -77,13 +77,19 @@ public class progress extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double time_int = Double.parseDouble(time.getText().toString());
-                time_int /=60;
-                double weight_int = Double.parseDouble(weight.getText().toString());
-                double result = (double) (time_int * weight_int * MET / 200);
 
-                String result_s = result +"";
-                show_result.setText(result_s);
+                if(!time.getText().toString().isEmpty()&& !weight.getText().toString().isEmpty()) {
+                    double time_int = Double.parseDouble(time.getText().toString());
+                    time_int /= 60;
+                    double weight_int = Double.parseDouble(weight.getText().toString());
+                    double result = (double) (time_int * weight_int * MET / 200) * 200;
+
+                    String result_s = result + "";
+                    show_result.setText(result_s);
+                }
+                else{
+                    show_result.setText("Please enter exercise duration and current weight!");
+                }
             }
         });
     }
