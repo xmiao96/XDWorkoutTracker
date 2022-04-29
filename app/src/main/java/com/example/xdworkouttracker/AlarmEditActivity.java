@@ -143,12 +143,13 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
                 alert.setAmpm(ampmSelected);
                 alert.setRepeatPattern(daySelected);
 
-                AlarmDataFileHelper.addAlarm(alert);
-                intent = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
-                startActivity(intent);
+                    AlarmDataFileHelper.addAlarm(alert);
+                    intent = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
+                    startActivity(intent);
+                }
 
 
-            }
+
         });
 
 

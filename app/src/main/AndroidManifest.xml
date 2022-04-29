@@ -34,6 +34,7 @@
 
         <activity
             android:name=".WebServices.ActForAlertFragmentActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="true" />
 
 
