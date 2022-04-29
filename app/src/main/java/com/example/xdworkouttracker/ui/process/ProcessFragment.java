@@ -1,5 +1,7 @@
 package com.example.xdworkouttracker.ui.process;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,19 +30,22 @@ import java.util.ArrayList;
 public class ProcessFragment extends Fragment {
 
     private Button button;
-    private ArrayList<Process> arrayList = new ArrayList<>();
+    public ArrayList<Process> arrayList = new ArrayList<>();
     public ProcessFragment(){}
-    public String ac, du, ca, re;
-
-
-//    private FragmentProcessBinding binding;
-    RecyclerView recyclerView;
+    public Process process;
+    public ProcessAdapter adapter;
+    public RecyclerView recyclerView;
+    public Intent intent;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_process, container, false);
         button = (Button)view.findViewById(R.id.add_process);
+
+
+        process = new Process();
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,49 +53,49 @@ public class ProcessFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        arrayList.clear();
-        buildListData();
-        initRecycleView(view);
-        return view;
-    }
-//
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(getArguments() != null){
-            ac = getArguments().getString("Activity");
-//            du = getArguments().getString("Duration");
-//            ca = getArguments().getString("Carolies");
-//            re = getArguments().getString("Result");
-            Toast.makeText(getActivity(), "test" + ac, Toast.LENGTH_SHORT).show();
-        }
-//        arrayList.add(new Process("1","Running","45","456","3.2"));
-    }
 
-    private void initRecycleView (View view){
-        RecyclerView recyclerView = view.findViewById(R.id.recycleView);
+        arrayList.clear();
+        intent = getActivity().getIntent();
+        String ddd = intent.getStringExtra("Duration");
+        String aaa = intent.getStringExtra("Activity");
+        String rrr = intent.getStringExtra("Result");
+
+
+        arrayList.add(new Process(ddd, aaa, rrr));
+
+        recyclerView = view.findViewById(R.id.recycleView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
-        ProcessAdapter adapter = new ProcessAdapter(arrayList);
+        adapter = new ProcessAdapter(arrayList);
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
+//        buildListData();
+//        initRecycleView(view);
+        return view;
     }
 
 
-    private void buildListData() {
-        arrayList.add(new Process("1","45","Running","456","3.2"));
-        arrayList.add(new Process("2","45","walking","456","3.2"));
 
-//        Bundle bundle = getArguments();
+//    private void initRecycleView (View view){
+//        RecyclerView recyclerView = view.findViewById(R.id.recycleView);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        ProcessAdapter adapter = new ProcessAdapter(arrayList);
+//        adapter.notifyDataSetChanged();
+//        recyclerView.setAdapter(adapter);
+//    }
+
+//    public void buildListData() {
+//        String ddd = process.getDuration();
+//        String aaa = process.getActivities();
+//        String rrr = process.getResult();
 //
-//        if(getArguments() != null){
-//            ac = getArguments().getString("Activity");
-//            du = getArguments().getString("Duration");
-//            ca = getArguments().getString("Carolies");
-//            re = getArguments().getString("Result");
-//            arrayList.add(new Process("1",du,ac,re, ca));
-//        }
-    }
+//        System.out.println("------------this is aaa" + aaa);
+//
+//        arrayList.add(new Process(ddd, aaa, rrr));
+//
+//
+//    }
 
 
     // this method for displaying detail after click each Process in list view

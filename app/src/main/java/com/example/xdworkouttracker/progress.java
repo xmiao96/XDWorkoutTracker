@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.xdworkouttracker.WebServices.ActForAlertFragmentActivity;
+import com.example.xdworkouttracker.WebServices.ActForProcessFragmentActivity;
 import com.example.xdworkouttracker.ui.process.Process;
 import com.example.xdworkouttracker.ui.process.ProcessAdapter;
 import com.example.xdworkouttracker.ui.process.ProcessFragment;
@@ -34,11 +36,17 @@ public class progress extends AppCompatActivity {
     public Context context;
     public Spinner spinner;
 
+    private ProcessAdapter adapter;
+
     private Button button;
 
-    private ArrayList<Process> list;
-    private ProcessAdapter adapter;
-    private  RecyclerView recyclerView;
+    public Process process;
+    public TextView actt;
+    public TextView durr;
+    public TextView shress;
+    public Intent intent;
+
+    public static String act,dur, shres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,41 +57,52 @@ public class progress extends AppCompatActivity {
         time = findViewById(R.id.numberInput);
         weight = findViewById(R.id.weightInput);
         calculate = findViewById(R.id.calculate_btn);
-        caroliesBurned = findViewById(R.id.carolies_title);
         show_result = findViewById(R.id.calculation_result);
         button = findViewById(R.id.save_btn);
 
+        process = new Process();
+        actt = (TextView)findViewById(R.id.process_activity_result);
+        durr = (TextView) findViewById(R.id.process_duration_result);
+        shress = (TextView) findViewById(R.id.process_activity_result_display);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Bundle bundle = new Bundle();
-              bundle.putString("Activity", spinner.getSelectedItem().toString());
-                bundle.putString("Duration", time.getText().toString());
-                bundle.putString("Carolies", caroliesBurned.getText().toString());
-                bundle.putString("Result", show_result.getText().toString());
 
-                ProcessFragment processFragment = new ProcessFragment();
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                processFragment.setArguments(bundle);
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, processFragment)
-                        .addToBackStack(null).commit();
+                act = spinner.getSelectedItem().toString();
+                dur = time.getText().toString();
+                shres = show_result.getText().toString();
 
-                System.out.println("bundle" + bundle);
+                process.setActivities(act);
+                process.setDuration(dur);
+                process.setResult(shres);
+
+
+                intent = new Intent(progress.this, ActForProcessFragmentActivity.class);
+                intent.putExtra("Activity", act);
+                intent.putExtra("Duration", dur);
+                intent.putExtra("Result", shres);
+
+                startActivity(intent);
             }
         });
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double time_int = Double.parseDouble(time.getText().toString());
-                time_int /=60;
-                double weight_int = Double.parseDouble(weight.getText().toString());
-                double result = (double) (time_int * weight_int * MET / 200);
 
-                String result_s = result +"";
-                show_result.setText(result_s);
+                if(!time.getText().toString().isEmpty()&& !weight.getText().toString().isEmpty()) {
+                    double time_int = Double.parseDouble(time.getText().toString());
+                    time_int /= 60;
+                    double weight_int = Double.parseDouble(weight.getText().toString());
+                    double result = (double) (time_int * weight_int * MET / 200) * 200;
+
+                    String result_s = result + "";
+                    show_result.setText(result_s);
+                }
+                else{
+                    show_result.setText("Please enter exercise duration and current weight!");
+                }
             }
         });
     }

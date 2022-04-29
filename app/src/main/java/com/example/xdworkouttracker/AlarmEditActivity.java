@@ -1,9 +1,16 @@
 package com.example.xdworkouttracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.AlertDialog;
 import android.app.Application;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,10 +19,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.anurag.multiselectionspinner.MultiSelectionSpinnerDialog;
 import com.anurag.multiselectionspinner.MultiSpinner;
+import com.example.xdworkouttracker.WebServices.ActForAlertFragmentActivity;
+import com.example.xdworkouttracker.ui.alert.AlertFragment;
+import com.example.xdworkouttracker.ui.alert.AlertViewModel;
+import com.example.xdworkouttracker.ui.process.ProcessFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,8 +43,7 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
     Spinner min_spinner;
     Spinner amPm_spinner;
 
-    private ArrayList<String> timeCard = new ArrayList<>();
-    public ArrayList<ArrayList<String>> alarmInfo = new ArrayList<>();
+    private ArrayList<AlertModel> timeCard;
     private AlarmCardAdapter adapter;
 
 
@@ -40,13 +52,27 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
 
     Context context;
 
+    private AlertViewModel avm;
+    public AlertModel alert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_edit);
 
-        context = AlarmEditActivity.this;
 
+        timeCard = new ArrayList<>();
+        alert = new AlertModel();
+
+//        context = AlarmEditActivity.this;
+//        avm = new ViewModelProvider(this).get(AlertViewModel.class);
+//        avm.getAlertList().observe(this, new Observer<ArrayList<AlertModel>>() {
+//            @Override
+//            public void onChanged(ArrayList<AlertModel> alertModels) {
+//                //update recycleView
+//                Toast.makeText(AlarmEditActivity.this, "Doing on changed??????/" , Toast.LENGTH_LONG).show();
+//            }
+//        });
 
         //HOUR SPINNER
         //set spinner drop down items
@@ -76,22 +102,6 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
         amPm_spinner.setAdapter(amPm_adapter);
 
 
-
-        //REPEAT PATTERN SPINNER
-//        Spinner pattern_spinner = (Spinner) findViewById(R.id.pattern_spinner);
-//        ArrayAdapter<CharSequence> pattern_adapter = ArrayAdapter.createFromResource(this,
-//                R.array.repeatpattern_list, android.R.layout.simple_spinner_item);
-//        pattern_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        pattern_spinner.setAdapter(pattern_adapter);
-//        pattern_spinner.setOnItemSelectedListener(new DialogInterface.OnMultiChoiceClickListener() {
-//
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i, boolean b) {
-//
-//            }
-//
-//        });
-
         multiSpinner= findViewById(R.id.spinnerMultiSpinner);
         ArrayList<String> contentList = new ArrayList<String>();
         contentList.add("Sunday");
@@ -118,8 +128,6 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
 
         //BUTTON SAVE
         save_button = findViewById(R.id.alarmSave);
-        intent = new Intent(context,AlarmActivity.class);
-
         save_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -131,34 +139,31 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
 
                 String timeComb = hourSelected + ":" + minSelected;
 
-                timeCard.add(timeComb);
-                timeCard.add(ampmSelected);
-                timeCard.add(daySelected);
-                alarmInfo.add(timeCard);
-                AlarmDataFileHelper.writeData(alarmInfo,getApplicationContext());
-                //TODO: SHOULD BE LOOP into the file to add the list to alramInfo list
-                adapter = new AlarmCardAdapter(alarmInfo,context);
-                adapter.notifyDataSetChanged();
+                alert.setTime(timeComb);
+                alert.setAmpm(ampmSelected);
+                alert.setRepeatPattern(daySelected);
+
+                AlarmDataFileHelper.addAlarm(alert);
+                intent = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
+                startActivity(intent);
 
 
-                context.startActivity(intent);
             }
         });
 
 
-        //BUTTON DELETE ALRAM
+        //BUTTON Back
         delete_button = findViewById(R.id.alram_delete_btn);
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AlarmEditActivity.this, AlarmActivity.class);
-                context.startActivity(i);
-            }
-        });
 
-
+                Intent i = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
+                (AlarmEditActivity.this).startActivity(i);
+            } });
 
     }
+
     @Override
     //This is where you get all your items selected from the Multi Selection Spinner
     public void OnMultiSpinnerItemSelected(List<String> chosenItems) {

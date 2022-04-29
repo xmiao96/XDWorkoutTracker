@@ -11,40 +11,53 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.xdworkouttracker.ui.alert.AlertFragment;
+import com.example.xdworkouttracker.ui.alert.AlertViewModel;
 
 import java.util.ArrayList;
 
-public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.AlarmViewHolder>{
 
 
     //[time, ampm, day]
-    public ArrayList<ArrayList<String>> alarmInfo;
-
+    public ArrayList<AlertModel> alarmInfo = new ArrayList<>();
+    public AlertViewModel avm;
     public Context context;
 
-    public AlarmCardAdapter(ArrayList<ArrayList<String>> alarmInfo, Context context) {
+    public AlarmCardAdapter(){}
+
+    public AlarmCardAdapter(ArrayList<AlertModel> alarmInfo, Context context) {
         this.alarmInfo = alarmInfo;
         this.context = context;
+        avm = new ViewModelProvider((FragmentActivity) context).get(AlertViewModel.class);
+
     }
+
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AlarmViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.alarm_card, parent, false);
 
-        return new alarmViewHolder(view);
+        return new AlarmViewHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((alarmViewHolder)holder).time.setText(alarmInfo.get(position).get(0));
-        ((alarmViewHolder)holder).ampm.setText(alarmInfo.get(position).get(1));
-        ((alarmViewHolder)holder).day.setText(alarmInfo.get(position).get(2));
-        ((alarmViewHolder)holder).alarmCard.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(@NonNull AlarmViewHolder holder, int position) {
+        AlertModel currentAlert = alarmInfo.get(position);
+        (holder).time.setText(currentAlert.getTimetime());
+        (holder).ampm.setText(currentAlert.getAmpm());
+        (holder).day.setText(currentAlert.getRepeatPattern());
+        (holder).alarmCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogMessage(position,context);
+                showDialogMessage(position, context);
             }
         });
 
@@ -55,7 +68,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         return alarmInfo.size();
     }
 
-    public class alarmViewHolder extends RecyclerView.ViewHolder{
+    class AlarmViewHolder extends RecyclerView.ViewHolder{
 
         private TextView time;
         private TextView ampm;
@@ -63,7 +76,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private CardView alarmCard;
 
 
-        public alarmViewHolder(@NonNull View itemView) {
+        public AlarmViewHolder(@NonNull View itemView) {
             super(itemView);
 
             time = itemView.findViewById(R.id.display_time);
@@ -71,7 +84,10 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             day = itemView.findViewById(R.id.display_day);
             alarmCard = itemView.findViewById(R.id.card_design_alram);
 
+        }
 
+        public CardView getView(){
+            return alarmCard;
         }
     }
 
@@ -84,6 +100,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     public void onClick(DialogInterface dialog, int i) {
                         if(alarmInfo !=null)
                             alarmInfo.remove(clickPosition);
+
                     }
                 })
                 .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
@@ -92,10 +109,6 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         //Todo: finish the function to naviagate another page to show more information
                         Intent intent = new Intent(context, AlarmEditActivity.class);
 
-                        // intent.putExtra("alram", alarmInfo.get(clickPosition));
-
-                        // intent.putExtra("cakeId", clickPosition);
-
                         context.startActivity(intent);
 
                     }
@@ -103,4 +116,12 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         alertDialog.create();
     }
+
+
+
+    public void setAlarmInfo(ArrayList<AlertModel> alarmInfo){
+        this.alarmInfo = alarmInfo;
+        notifyDataSetChanged();
+    }
+
 }
