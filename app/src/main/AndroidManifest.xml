@@ -20,6 +20,7 @@
         android:theme="@style/Theme.XDWorkoutTracker">
         <activity
             android:name=".WebServices.ActForProcessFragmentActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".AlarmEditActivity"
@@ -29,6 +30,7 @@
             android:exported="true" />
         <activity
             android:name=".WebServices.ActForAlertFragmentActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="true" />
 
         <activity

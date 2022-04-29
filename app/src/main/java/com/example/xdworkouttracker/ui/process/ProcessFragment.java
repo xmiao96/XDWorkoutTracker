@@ -1,5 +1,6 @@
 package com.example.xdworkouttracker.ui.process;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.xdworkouttracker.AlarmDataFileHelper;
 import com.example.xdworkouttracker.R;
 import com.example.xdworkouttracker.progress;
 //import com.example.xdworkouttracker.databinding.FragmentProcessBinding;
@@ -30,12 +32,13 @@ import java.util.ArrayList;
 public class ProcessFragment extends Fragment {
 
     private Button button;
-    public ArrayList<Process> arrayList = new ArrayList<>();
+    public static ArrayList<Process> arrayList = new ArrayList<>();
     public ProcessFragment(){}
     public Process process;
     public ProcessAdapter adapter;
     public RecyclerView recyclerView;
     public Intent intent;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class ProcessFragment extends Fragment {
 
         process = new Process();
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,20 +59,21 @@ public class ProcessFragment extends Fragment {
             }
         });
 
-        arrayList.clear();
-        intent = getActivity().getIntent();
-        String ddd = intent.getStringExtra("Duration");
-        String aaa = intent.getStringExtra("Activity");
-        String rrr = intent.getStringExtra("Result");
+        System.out.println("------------->" + getActivity().getIntent().getStringExtra("Duration"));
 
+        if(AlarmDataFileHelper.getProcessStorage().size() > 0){
+            intent = getActivity().getIntent();
+            String ddd = intent.getStringExtra("Duration");
+            String aaa = intent.getStringExtra("Activity");
+            String rrr = intent.getStringExtra("Result");
+            process = new Process(ddd,aaa,rrr);
+        }
 
-        arrayList.add(new Process(ddd, aaa, rrr));
-
+        AlarmDataFileHelper.addProcess(process);
         recyclerView = view.findViewById(R.id.recycleView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new ProcessAdapter(arrayList);
-        adapter.notifyDataSetChanged();
+        adapter = new ProcessAdapter(AlarmDataFileHelper.getProcessStorage());
         recyclerView.setAdapter(adapter);
 //        buildListData();
 //        initRecycleView(view);

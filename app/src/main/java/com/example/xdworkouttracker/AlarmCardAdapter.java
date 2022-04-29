@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,7 +26,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.Alar
 
 
     //[time, ampm, day]
-    public ArrayList<AlertModel> alarmInfo = new ArrayList<>();
+    public ArrayList<AlertModel> alarmInfo;
     public AlertViewModel avm;
     public Context context;
 
@@ -35,7 +36,7 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.Alar
         this.alarmInfo = alarmInfo;
         this.context = context;
         avm = new ViewModelProvider((FragmentActivity) context).get(AlertViewModel.class);
-
+        alarmInfo = new ArrayList<>();
     }
 
 
@@ -57,9 +58,11 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.Alar
         (holder).alarmCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogMessage(position, context);
+
+                showDialogMessage(currentAlert,context);
             }
         });
+
 
     }
 
@@ -91,25 +94,24 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.Alar
         }
     }
 
-    public void showDialogMessage(int clickPosition, Context context){
+    public void showDialogMessage(AlertModel currentAlert, Context context){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         AlertDialog show = alertDialog.setTitle("Edit Alarm")
                 .setMessage("Do you want to edit this alarm?")
                 .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int i) {
+                    public void onClick(DialogInterface dialog, int clickPosition) {
                         if(alarmInfo !=null)
-                            alarmInfo.remove(clickPosition);
+                            alarmInfo.remove(currentAlert);
+                        setAlarmInfo(alarmInfo);
 
                     }
                 })
-                .setPositiveButton("Edit", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
                         //Todo: finish the function to naviagate another page to show more information
-                        Intent intent = new Intent(context, AlarmEditActivity.class);
-
-                        context.startActivity(intent);
+                        dialog.cancel();
 
                     }
                 }).show();

@@ -56,7 +56,7 @@
 
             <TextView
                 android:id="@+id/display_day"
-                android:layout_width="350dp"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
                 android:layout_marginStart="16dp"

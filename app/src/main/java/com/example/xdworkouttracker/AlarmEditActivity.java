@@ -146,9 +146,10 @@ public class AlarmEditActivity extends AppCompatActivity implements MultiSelecti
                 AlarmDataFileHelper.addAlarm(alert);
                 intent = new Intent(AlarmEditActivity.this, ActForAlertFragmentActivity.class);
                 startActivity(intent);
-
-
             }
+
+
+
         });
 
 

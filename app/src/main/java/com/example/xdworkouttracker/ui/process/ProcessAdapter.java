@@ -23,11 +23,8 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.MyViewHo
     public Context context;
     public ProcessAdapter(){}
 
-    public ProcessAdapter(List<Process> list
-//                          ItemClickListener clickListener
-    ) {
+    public ProcessAdapter(List<Process> list) {
         this.list = list;
-
     }
 
 

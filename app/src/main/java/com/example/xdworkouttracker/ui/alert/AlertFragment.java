@@ -31,7 +31,6 @@ public class AlertFragment extends Fragment {
 
     private FragmentAlertBinding binding;
     private RecyclerView recyclerView;
-    private ArrayList<String> timeCard = new ArrayList<>();
     public ArrayList<ArrayList<String>> alarmInfo;
     private AlarmCardAdapter adapter;
     public Intent intent;
@@ -54,7 +53,8 @@ public class AlertFragment extends Fragment {
 //            ((ViewGroup)recyclerView.getParent()).removeView(recyclerView);
 //        }
 
-        adapter = new AlarmCardAdapter();
+        //adapter = new AlarmCardAdapter();
+        adapter = new AlarmCardAdapter(AlarmDataFileHelper.getAlarmStorage(),getContext());
         recyclerView.setAdapter(adapter);
 
         avm = new ViewModelProvider(requireActivity()).get(AlertViewModel.class);
@@ -63,9 +63,10 @@ public class AlertFragment extends Fragment {
             public void onChanged(ArrayList<AlertModel> alertModels) {
                 //update recycleView
                 adapter.setAlarmInfo(alertModels);
-                Toast.makeText(getContext(), "Doing on changed??????/" , Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Alarm setting. " , Toast.LENGTH_LONG).show();
             }
         });
+
 
 
         setUpAlarm = view.findViewById(R.id.setUpBtn);

@@ -94,24 +94,23 @@
 
         <Button
             android:id="@+id/alram_delete_btn"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
-            android:background="@color/design_default_color_error"
-            android:backgroundTint="#DD1212"
+            android:layout_marginEnd="50dp"
             android:text="Back" />
 
         <Button
             android:id="@+id/alarmSave"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="5dp"
             android:text="Save"
             android:textAlignment="center" />
+
     </LinearLayout>
 
 </LinearLayout>
