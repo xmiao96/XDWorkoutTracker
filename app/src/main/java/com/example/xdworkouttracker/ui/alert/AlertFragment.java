@@ -1,26 +1,31 @@
 package com.example.xdworkouttracker.ui.alert;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.xdworkouttracker.AlarmCardAdapter;
 import com.example.xdworkouttracker.AlarmDataFileHelper;
 import com.example.xdworkouttracker.AlarmEditActivity;
+import com.example.xdworkouttracker.AlertModel;
 import com.example.xdworkouttracker.R;
 import com.example.xdworkouttracker.databinding.FragmentAlertBinding;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class AlertFragment extends Fragment {
 
@@ -33,28 +38,35 @@ public class AlertFragment extends Fragment {
     public Intent intentSetUpAlarm;
 
     public Button setUpAlarm;
+    public View view;
+    public AlertViewModel avm;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_alarm, container, false);
-
+        view = inflater.inflate(R.layout.activity_alarm, container, false);
+        super.onCreate(savedInstanceState);
 
         recyclerView = view.findViewById(R.id.alarm_list_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //get alarm list data from file
-        alarmInfo = new ArrayList<>();
-        alarmInfo = AlarmDataFileHelper.readData(view.getContext());
+//        if(recyclerView.getParent() !=null){
+//            ((ViewGroup)recyclerView.getParent()).removeView(recyclerView);
+//        }
 
-        System.out.println(alarmInfo);
-
-        adapter = new AlarmCardAdapter(alarmInfo,getActivity());
+        adapter = new AlarmCardAdapter();
         recyclerView.setAdapter(adapter);
 
-        if(recyclerView.getParent() !=null){
-            ((ViewGroup)recyclerView.getParent()).removeView(recyclerView);
-        }
+        avm = new ViewModelProvider(requireActivity()).get(AlertViewModel.class);
+        avm.getAlertList().observe(getViewLifecycleOwner(), new Observer<ArrayList<AlertModel>>() {
+            @Override
+            public void onChanged(ArrayList<AlertModel> alertModels) {
+                //update recycleView
+                adapter.setAlarmInfo(alertModels);
+                Toast.makeText(getContext(), "Doing on changed??????/" , Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         setUpAlarm = view.findViewById(R.id.setUpBtn);
 
@@ -67,9 +79,11 @@ public class AlertFragment extends Fragment {
 
             }
         });
-
         return view;
     }
+
+
+
 
     @Override
     public void onDestroyView() {
