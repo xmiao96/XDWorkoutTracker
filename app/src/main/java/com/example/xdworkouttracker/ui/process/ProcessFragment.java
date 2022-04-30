@@ -61,15 +61,16 @@ public class ProcessFragment extends Fragment {
 
         System.out.println("------------->" + getActivity().getIntent().getStringExtra("Duration"));
 
-        if(AlarmDataFileHelper.getProcessStorage().size() > 0){
-            intent = getActivity().getIntent();
-            String ddd = intent.getStringExtra("Duration");
-            String aaa = intent.getStringExtra("Activity");
-            String rrr = intent.getStringExtra("Result");
+        intent = getActivity().getIntent();
+        String ddd = intent.getStringExtra("Duration");
+        String aaa = intent.getStringExtra("Activity");
+        String rrr = intent.getStringExtra("Result");
+
+        if(ddd != null && aaa != null && rrr != null){
             process = new Process(ddd,aaa,rrr);
+            AlarmDataFileHelper.addProcess(process);
         }
 
-        AlarmDataFileHelper.addProcess(process);
         recyclerView = view.findViewById(R.id.recycleView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);

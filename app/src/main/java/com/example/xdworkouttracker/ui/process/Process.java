@@ -2,9 +2,9 @@ package com.example.xdworkouttracker.ui.process;
 
 public class Process {
 
-    private String duration = "45";
-    private String activities = "Running";
-    private String result = "320";
+    private String duration;
+    private String activities;
+    private String result;
 
 
     public Process(String duration, String activities, String result) {
