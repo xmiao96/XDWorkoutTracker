@@ -2,30 +2,20 @@ package com.example.xdworkouttracker.ui.process;
 
 public class Process {
 
-
-    private String processNo;
     private String duration;
-    private String activity;
+    private String activities;
     private String result;
-    private String carolies;
 
 
-    public Process(String processNo, String duration, String activity, String result, String carolies) {
-        this.processNo = processNo;
+    public Process(String duration, String activities, String result) {
         this.duration = duration;
-        this.activity = activity;
+        this.activities = activities;
         this.result = result;
-        this.carolies = carolies;
+
     }
 
     public Process (){}
-    public String getProcessNo() {
-        return processNo;
-    }
 
-    public void setProcessNo(String processNo) {
-        this.processNo = processNo;
-    }
 
     public String getDuration() {
         return duration;
@@ -35,12 +25,12 @@ public class Process {
         this.duration = duration;
     }
 
-    public String getActivity() {
-        return activity;
+    public String getActivities() {
+        return activities;
     }
 
-    public void setActivity(String activity) {
-        this.activity = activity;
+    public void setActivities(String activities) {
+        this.activities = activities;
     }
 
     public String getResult() {
@@ -51,11 +41,5 @@ public class Process {
         this.result = result;
     }
 
-    public String getCarolies() {
-        return carolies;
-    }
 
-    public void setCarolies(String carolies) {
-        this.carolies = carolies;
-    }
 }
