@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".AlarmEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/hour_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral_variant80"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/hour_list"
+            android:isScrollContainer="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/minute_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_neutral80"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/min_list"
+            android:isScrollContainer="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/AmPm_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/material_dynamic_primary70"
+            android:dropDownSelector="@android:drawable/arrow_down_float"
+            android:entries="@array/amPm_list"
+            android:spinnerMode="dropdown" />
+        android:entries="@array/amPm_list"
+        android:isScrollContainer="true" />
+
+    </LinearLayout>
+
+    <com.anurag.multiselectionspinner.MultiSpinner
+        android:id="@+id/spinnerMultiSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:hint="Select routine"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/sound_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:background="@color/material_dynamic_neutral60"
+        android:entries="@array/sound_list" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/alram_delete_btn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/alarmSave"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="Save"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

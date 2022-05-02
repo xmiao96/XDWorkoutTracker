@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragement.HomeFragment">
+
+    <fragment
+        android:id="@+id/homeMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/coordinate" >
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:elevation="10dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="25dp"
+            app:boxCornerRadiusTopEnd="25dp"
+            app:boxCornerRadiusTopStart="25dp"
+            app:boxCornerRadiusBottomStart="25dp"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidth="0dp"
+            app:layout_anchor="@id/view"
+            app:layout_anchorGravity="bottom|center"
+            app:endIconMode="clear_text"
+            app:hintEnabled="false"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:drawableTint="@color/teal_700"
+                android:drawablePadding="10dp"
+                android:hint="Search Place"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColorHighlight="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/view"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/map_background"
+            android:elevation="5dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/placesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/coordinate"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/placesGroup"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true" />
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMapType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/placesList"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_map_type"
+        app:backgroundTint="@color/white"
+        app:fabCustomSize="40dp"
+        app:tint="@color/teal_700" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/enableTraffic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnMapType"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_traffic"
+        android:backgroundTint="@color/white"
+        app:fabCustomSize="40dp"
+        app:tint="@color/add_process_color" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/currentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enableTraffic"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_baseline_my_location_24"
+        android:backgroundTint="@color/white"
+        app:fabCustomSize="50dp"
+        app:tint="@color/teal_700" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/placesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="55dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+</RelativeLayout>
