@@ -68,11 +68,15 @@ public class progress extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 act = spinner.getSelectedItem().toString();
                 dur = time.getText().toString();
                 shres = show_result.getText().toString();
-
+                if (dur.equals("")){
+                    dur = "0.0";
+                }
+                if (shres.equals("")){
+                    shres = "0.0";
+                }
                 process.setActivities(act);
                 process.setDuration(dur);
                 process.setResult(shres);

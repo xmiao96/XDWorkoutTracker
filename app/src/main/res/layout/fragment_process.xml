@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:backgroundTint="@color/add_process_color"
-            android:text=" + Add New Process"
+            android:text=" + Add New Progress"
             android:textColor="@color/teal_1"
             android:textSize="20sp"
             android:textStyle="bold" />

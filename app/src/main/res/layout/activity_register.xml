@@ -182,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="example: 64.2"
+                    android:hint="example: 135.5"
                     android:inputType="numberDecimal" />
 
                 <TextView
@@ -190,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="in kg" />
+                    android:text="in lbs" />
             </LinearLayout>
 
         </LinearLayout>
