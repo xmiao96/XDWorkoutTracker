@@ -96,8 +96,8 @@ public class AlarmCardAdapter extends RecyclerView.Adapter<AlarmCardAdapter.Alar
 
     public void showDialogMessage(AlertModel currentAlert, Context context){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        AlertDialog show = alertDialog.setTitle("Edit Alarm")
-                .setMessage("Do you want to edit this alarm?")
+        AlertDialog show = alertDialog.setTitle("Delete Alarm")
+                .setMessage("Do you want to delete this alarm?")
                 .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int clickPosition) {

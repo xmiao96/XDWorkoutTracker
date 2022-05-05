@@ -20,7 +20,7 @@
             android:layout_height="100dp"
             android:backgroundTint="@color/add_process_color"
             android:text=" + Add New Process"
-            android:textColor="@color/add_process_text_color"
+            android:textColor="@color/teal_1"
             android:textSize="20sp"
             android:textStyle="bold" />
 

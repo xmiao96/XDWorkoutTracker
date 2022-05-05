@@ -10,4 +10,11 @@
     <color name="add_process_color">#BCB4B4</color>
     <color name="add_process_text_color">#FF6200EE</color>
     <color name="transparentColor" >#00FFFFFF</color>
+    <!-- Theme with fresh color, light -->
+    <color name="teal_1" >#C3D9DD</color>
+    <color name="teal_2" >#97BEBE</color>
+    <color name="teal_3" >#569B96</color>
+    <color name="teal_4" >#3A8385</color>
+    <color name="pink_50" >#EAE4EC</color>
+
 </resources>

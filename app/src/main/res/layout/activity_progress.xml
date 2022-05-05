@@ -6,127 +6,138 @@
     android:layout_height="match_parent"
     tools:context=".progress">
 
-    <EditText
-        android:id="@+id/progress_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="128dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Progress"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/timeInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/save_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/carolies_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="none"
-        android:minHeight="48dp"
-        android:text="Carolies You Burn"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_title"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Spinner
-        android:id="@+id/spinner_activities"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:entries="@array/activity_list"
-        app:layout_constraintBottom_toTopOf="@+id/carolies_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_title"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/timeInput"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginBottom="329dp"
-        android:background="@color/purple_200"
-        android:ems="10"
-        android:inputType="none"
-        android:text="Excersise Duration"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numberInput"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_title" />
+            <EditText
+                android:id="@+id/progress_title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="128dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Progress"
+                android:textSize="34sp" />
 
-    <EditText
-        android:id="@+id/numberInput"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="328dp"
-        android:background="@color/purple_200"
-        android:ems="10"
-        android:hint="0 minutes"
-        android:inputType="number"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toEndOf="@+id/timeInput" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/weightInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="276dp"
-        android:ems="10"
-        android:hint="Enter your current weight (lbs)"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Spinner
+            android:id="@+id/spinner_activities"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_shape"
+            android:dropDownWidth="wrap_content"
+            android:entries="@array/activity_list"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/calculate_btn"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
+        <EditText
+            android:id="@+id/carolies_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none"
+            android:minHeight="48dp"
+            android:text="Carolies You Burn"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/calculation_result"
-        android:layout_width="405dp"
-        android:layout_height="148dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="34dp"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculate_btn" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/timeInput"
+                android:layout_width="157dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="15dp"
+                android:ems="10"
+                android:inputType="none"
+                android:text="Excersise Duration" />
+
+            <EditText
+                android:id="@+id/numberInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_shape_2"
+                android:ems="10"
+                android:hint="0 minutes"
+                android:inputType="number"
+                android:shadowRadius="3"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/bg_shape_2"
+            android:ems="10"
+            android:hint="Enter your current weight (kg)"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calculate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Calculate" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:text="Save" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/calculation_result"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_shape_result"
+            android:hint="calculation result shown here"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/teal_4"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
